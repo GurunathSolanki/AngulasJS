@@ -1,0 +1,19 @@
+<html ng-app>
+	<head>
+		<script type="text/Javascript" src="scripts/worker.js"></script>
+		<script type="text/javascript" src="../angular.js"></script>
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	
+	<body>
+		<div ng-controller="workController">
+			<ul class="unstyled">
+				<li ng-repeat="sub in subjects">
+					<input type="checkbox" ng-model="sub.pass"/>
+					<span class="sub-{{sub.pass}}">{{sub.name}}</span>
+					
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>

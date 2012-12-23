@@ -1,14 +1,15 @@
-<!-- Changed at home-->
-
 <html ng-app>
 	<head>
 		<script type="text/Javascript" src="scripts/worker.js"></script>
-		<script type="text/javascript" src="../angular.js"></script>
+		<script type="text/javascript" src="scripts/angular.js"></script>
+		<script type="text/javascript" src="scripts/underscore.js"></script>
 		<link rel="stylesheet" href="css/style.css">
 	</head>
 	
 	<body>
 		<div ng-controller="workController">
+			
+		<h2> Number of Subjects: {{getNumberOfSubjects()}} </h2>
 			<ul class="unstyled">
 				<li ng-repeat="sub in subjects">
 					<input type="checkbox" ng-model="sub.pass"/>
@@ -16,6 +17,13 @@
 					
 				</li>
 			</ul>
+			
+		<form>
+			<input type="text" ng-model="formAddSubject" ng-model-instant>
+			<button class="button-large" ng-click="addSubject()">Add</button>
+		</form>
+		
+		<button ng-click="clearCompleted()">Remove Completed</button>
 		</div>
 	</body>
 </html>
